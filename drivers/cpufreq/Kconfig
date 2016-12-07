@@ -132,6 +132,18 @@ config CPU_FREQ_DEFAULT_GOV_SCHEDUTIL
 	  governor will be 'performance'.
 endchoice
 
+config CPU_FREQ_GOV_INTERACTIVE_PRO
+	tristate "'interactive_pro' cpufreq governor"
+	depends on CPU_FREQ
+
+endchoice
+
+config CPU_FREQ_DEFAULT_GOV_INTERACTIVE_PRO
+	bool "interactive_pro"
+	select CPU_FREQ_GOV_INTERACTIVE_PRO
+	---help---
+	  Use the CPUFreq governor 'interactive_pro' as default.
+
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
 	help
